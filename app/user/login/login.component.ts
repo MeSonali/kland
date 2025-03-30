@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
 })
-export class LoginComponent {
+export class LoginComponent{
   loginForm: FormGroup;
 
   constructor(
@@ -22,6 +22,7 @@ export class LoginComponent {
     });
   }
 
+
   onSubmit() {
     if (this.loginForm.valid) {
       const { email, password } = this.loginForm.value;
@@ -31,28 +32,28 @@ export class LoginComponent {
           console.log(res.data);
 
           localStorage.setItem('userData', JSON.stringify(res.data));
-          //   this.router.navigate(['/user/profile']);   // Navigate to profile page
-          //   console.log('Navigation successful');
-          // },
-          // (error) => {
-          //   console.error('Login Failed:', error);
-          // }
+            this.router.navigate(['/user/profile']);   // Navigate to profile page
+            console.log('Navigation successful');
+          },
+          (error) => {
+            console.error('Login Failed:', error);
+          }
 
           // Use Navigation Promise
-          this.router
-            .navigate(['/profile'])
-            .then((success) => {
-              if (success) {
-                console.log('✅ Navigation confirmed!');
-              } else {
-                console.error('❌ Navigation failed!');
-              }
-            })
-            .catch((err) => console.error('🚨 Navigation error:', err));
-        },
-        (error) => {
-          console.error('Login Failed:', error);
-        }
+        //   this.router
+        //     .navigate(['/profile'])
+        //     .then((success) => {
+        //       if (success) {
+        //         console.log('✅ Navigation confirmed!');
+        //       } else {
+        //         console.error('❌ Navigation failed!');
+        //       }
+        //     })
+        //     .catch((err) => console.error('🚨 Navigation error:', err));
+        // },
+        // (error) => {
+        //   console.error('Login Failed:', error);
+        // }
       );
     }
   }

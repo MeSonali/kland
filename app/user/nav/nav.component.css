@@ -1,0 +1,68 @@
+.navbar {
+    background-color: #009688 !important;
+  }
+  
+  .navbar-brand {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+  }
+  
+  .navbar-toggler {
+    border: none;
+  }
+  
+  .offcanvas {
+    background-color: #00796b;
+    color: white;
+    width: 100% !important; /* Full-screen menu */
+  }
+  
+  .offcanvas-title {
+    font-weight: bold;
+  }
+  
+  .offcanvas-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .nav-link {
+    color: white !important;
+    font-size: 1.8rem;
+    padding: 20px;
+    display: block;
+  }
+  
+  .dropdown-menu {
+    background-color: #004d40;
+  }
+  
+  .dropdown-item {
+    color: white !important;
+  }
+  
+  .dropdown-item:hover {
+    background-color: #00695c;
+  }
+  
+  /* Updated Header Styles */
+.header {
+    background-color: #009688; /* Same as Navbar */
+    color: white; /* Same as Navbar */
+    text-align: center;
+    padding: 60px 20px;
+  }
+  
+  .header h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    font-style: italic;
+  }
+  
+  .header p {
+    font-size: 1.2rem;
+  }
+  

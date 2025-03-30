@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { ReactiveFormsModule , FormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './user/login/login.component';
@@ -14,6 +14,9 @@ import { MatIconModule } from '@angular/material/icon';
 import { LayoutComponent } from './user/layout/layout.component';
 import { RouterModule } from '@angular/router';
 import { UserserviceService } from '../app/services/userservice.service';
+import { NavComponent } from './user/nav/nav.component'; // Import NavComponent
+import { FooterComponent } from './user/footer/footer.component'; // Import FooterComponent
+
 
 @NgModule({
   declarations: [
@@ -22,6 +25,8 @@ import { UserserviceService } from '../app/services/userservice.service';
     ProfileComponent,
     LayoutComponent,
     
+    NavComponent, // Declare NavComponent
+    FooterComponent // Declare FooterComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,44 @@
+/* Background styling */
+.footer-bg {
+    background: #009688;
+    color: white;
+    min-height: 200px;
+    padding: 20px 0;
+  }
+  
+  /* Footer sections */
+  .footer-left, .footer-center, .footer-right {
+    text-align: center;
+    margin: 10px;
+  }
+  
+  /* Footer logo */
+  .footer-logo {
+    height: 30px;
+  }
+  
+  /* Links styling */
+  .footer-bg a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  .footer-bg a:hover {
+    color: #ffeb3b;
+  }
+  
+  /* Horizontal line */
+  .footer-bg hr {
+    border-color: white;
+    opacity: 0.5;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .footer-left, .footer-center, .footer-right {
+      text-align: center;
+      margin-bottom: 15px;
+    }
+  }
+  
