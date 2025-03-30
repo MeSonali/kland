@@ -1,37 +1,95 @@
-<form>
-    <div class="form-group">
-      <label for="firstName">First Name</label>
-      <input id="firstName" type="text" [(ngModel)]="user.first_name" name="firstName" disabled>
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-md-3">
+      <div class="card mb-3">
+        <div class="card-body text-center">
+          <div class="rounded-circle bg-secondary text-white d-flex justify-content-center align-items-center mx-auto mb-2" style="width: 80px; height: 80px; font-size: 2rem;">
+            <i class="bi bi-person-fill"></i>
+          </div>
+          <div>
+            <h6 class="mb-1">{{ user.first_name }}</h6>
+            <p class="text-muted mb-0">+{{ user.phone_code }} {{ user.phone_number }}</p>
+            <p class="text-muted mb-0">{{ user.email }}</p>
+          </div>
+        </div>
+      </div>
+      <div class="list-group">
+        <a href="#" class="list-group-item list-group-item-action active">
+          <i class="bi bi-pencil-square me-2"></i> Edit Profile
+        </a>
+        <a href="#" class="list-group-item list-group-item-action">
+          <i class="bi bi-question-circle me-2"></i> FAQS
+        </a>
+        <a href="#" class="list-group-item list-group-item-action">
+          <i class="bi bi-telephone me-2"></i> Contact Us
+        </a>
+        <a href="#" class="list-group-item list-group-item-action text-danger">
+          <i class="bi bi-trash me-2"></i> Delete Account
+        </a>
+        <a href="#" class="list-group-item list-group-item-action">
+          <i class="bi bi-box-arrow-left me-2"></i> Logout
+        </a>
+      </div>
     </div>
-  
-    <div class="form-group">
-      <label for="lastName">Last Name</label>
-      <input id="lastName" type="text" [(ngModel)]="user.last_name" name="lastName" disabled>
+    <div class="col-md-9">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">PERSONAL INFORMATION</h5>
+          <div class="d-flex align-items-center mb-3">
+            <div class="rounded-circle bg-secondary text-white d-flex justify-content-center align-items-center me-3" style="width: 50px; height: 50px;">
+              <i class="bi bi-person-fill fs-3"></i>
+            </div>
+            <div>
+              <h6 class="mb-0">{{ user.first_name }} {{ user.last_name }}</h6>
+              <small class="text-muted">{{ user.email }}</small>
+            </div>
+          </div>
+          <form>
+            <div class="row mb-3">
+              <div class="col-md-6">
+                <label for="firstName" class="form-label">First Name</label>
+                <input type="text" class="form-control" id="firstName" [(ngModel)]="user.first_name" name="firstName" disabled>
+              </div>
+              <div class="col-md-6">
+                <label for="lastName" class="form-label">Last Name</label>
+                <input type="text" class="form-control" id="lastName" [(ngModel)]="user.last_name" name="lastName" disabled>
+              </div>
+            </div>
+            <div class="row mb-3">
+              <div class="col-md-6">
+                <label for="email" class="form-label">Email Address</label>
+                <input type="email" class="form-control" id="email" [(ngModel)]="user.email" name="email" disabled>
+              </div>
+              <div class="col-md-6">
+                <label for="phone" class="form-label">Phone Number</label>
+                <div class="input-group">
+                  <span class="input-group-text">+{{ user.phone_code }}</span>
+                  <input type="text" class="form-control" id="phone" [(ngModel)]="user.phone" name="phoneNumber">
+                </div>
+              </div>
+            </div>
+            <div class="row mb-3">
+              <div class="col-md-6">
+                <label for="oldPassword" class="form-label">Old Password</label>
+                <input type="password" class="form-control" id="oldPassword" [(ngModel)]="oldPassword" name="oldPassword" placeholder="Enter your current password">
+              </div>
+              <div class="col-md-6">
+                <label for="newPassword" class="form-label">New Password</label>
+                <input type="password" class="form-control" id="newPassword" [(ngModel)]="newPassword" name="newPassword" placeholder="Enter your new password">
+              </div>
+            </div>
+            <div class="row mb-3">
+              <div class="col-md-12">
+                <label for="confirmPassword" class="form-label">Confirm New Password</label>
+                <input type="password" class="form-control" id="confirmPassword" [(ngModel)]="confirmPassword" name="confirmPassword" placeholder="Confirm your new password">
+              </div>
+            </div>
+            <div class="d-flex justify-content-end">
+              <button type="submit" class="btn btn-primary w-100">Save</button>
+            </div>
+          </form>
+        </div>
+      </div>
     </div>
-  
-    <div class="form-group">
-      <label for="email">Email</label>
-      <input id="email" type="email" [(ngModel)]="user.email" name="email" disabled>
-    </div>
-  
-    <div class="form-group">
-      <label for="phone">Phone Number</label>
-      <input id="phone" type="text" [(ngModel)]="user.phone_code" name="phoneCode" disabled>
-    </div>
-  
-    <div class="form-group">
-      <label for="newPassword">New Password</label>
-      <input id="newPassword" type="password" [(ngModel)]="newPassword" name="newPassword" placeholder="Enter new password">
-    </div>
-  
-    <div class="form-group">
-      <label for="confirmPassword">Confirm New Password</label>
-      <input id="confirmPassword" type="password" [(ngModel)]="confirmPassword" name="confirmPassword" placeholder="Confirm new password">
-    </div>
-  
-    <div class="btn-group">
-      <button type="submit" class="btn-save">Save</button>
-      <button type="button" class="btn-logout" (click)="logout()">Logout</button>
-    </div>
-  </form>
-  
+  </div>
+</div>

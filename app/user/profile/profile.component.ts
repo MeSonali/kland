@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 export class ProfileComponent implements OnInit {
   // ✅ Declare all required properties
   user: any = {};
+  oldPassword: string = '';
   newPassword: string = ''; // <-- Added this property
   confirmPassword: string = ''; // <-- Added this property
 
