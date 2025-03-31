@@ -5,20 +5,20 @@
 }
 
 .card {
-  border: 1px solid #e0e0e0;
+  border: 1px solid #f8f9fa; /* Lighter card border */
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05); /* Subtle shadow */
   margin-bottom: 20px;
 }
 
 .card-body {
-  padding: 20px;
+  padding: 1rem; /* Reduced padding */
 }
 
 .card-title {
-  font-size: 1.5rem;
+  font-size: 1.3rem; /* Slightly smaller title */
   color: #333;
-  margin-bottom: 20px;
+  margin-bottom: 1.2rem; /* Adjusted margin */
 }
 
 /* User Summary (Left Column) */
@@ -31,38 +31,57 @@
 }
 
 .bg-secondary {
-  background-color: #6c757d !important;
+  background-color: #f8f9fa !important; /* Light background */
+  border: 1px solid #ddd !important; /* Light border */
+  color: #555 !important; /* Darker icon color */
 }
 
 .text-white {
-  color: #fff !important;
+  color: inherit !important; /* Override text-white */
 }
 
 .bi-person-fill {
-  font-size: 2rem;
+  font-size: 2.2rem; /* Larger icon */
 }
 
 .mb-1 {
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.1rem; /* Reduced margin */
 }
 
 .text-muted {
   color: #6c757d !important;
+  font-size: 0.9rem; /* Slightly smaller text */
 }
 
 /* Navigation List */
 .list-group {
-  margin-top: 15px;
+  margin-top: 0; /* Removed top margin */
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
 }
 
 .list-group-item-action {
   cursor: pointer;
+  border: none;
+  padding: 0.6rem 1rem; /* Reduced padding */
+  color: #495057;
+  font-size: 0.95rem;
+}
+
+.list-group-item-action:hover {
+  background-color: #e9ecef;
 }
 
 .list-group-item-action.active {
-  background-color: #007bff;
-  border-color: #007bff;
-  color: #fff;
+  background-color: #e9ecef; /* Light background for active */
+  color: #009688 !important;
+  border-left: none !important;
+  font-weight: bold;
+}
+
+.list-group-item-action.active:hover {
+  background-color: #e9ecef;
 }
 
 .bi {
@@ -70,35 +89,44 @@
 }
 
 .me-2 {
-  margin-right: 0.5rem;
+  margin-right: 0.4rem; /* Reduced margin */
 }
 
 .text-danger {
   color: #dc3545 !important;
 }
 
+.list-group-item-action.text-danger:hover {
+  background-color: #f8d7da;
+  color: #721c24 !important;
+}
+
 /* Personal Information Form (Right Column) */
 .d-flex.align-items-center.mb-3 {
-  margin-bottom: 1.5rem !important;
+  margin-bottom: 1rem !important;
 }
 
 .fs-3 {
-  font-size: 1.75rem !important;
+  font-size: 1.5rem !important;
 }
 
 .form-label {
-  font-weight: bold;
+  font-weight: normal; /* Made font weight normal */
   color: #555;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.2rem; /* Reduced margin */
   display: block;
+  font-size: 0.9rem;
 }
 
 .form-control {
-  border: 1px solid #ccc;
+  border: 1px solid #ced4da; /* Lighter border */
   border-radius: 4px;
-  padding: 0.75rem;
-  margin-bottom: 1rem;
-  font-size: 1rem;
+  padding: 0.5rem 0.75rem; /* Reduced padding */
+  margin-bottom: 0.8rem; /* Reduced margin */
+  font-size: 0.9rem;
+  border-left-width: 1px !important;
+  border-left-style: solid !important;
+  border-left-color: #ced4da !important;
 }
 
 .form-control:focus {
@@ -107,11 +135,11 @@
 }
 
 .row.mb-3 > div:nth-child(1) { /* For spacing between side-by-side elements */
-  padding-right: 5px;
+  padding-right: 8px; /* Increased spacing */
 }
 
 .row.mb-3 > div:nth-child(2) { /* For spacing between side-by-side elements */
-  padding-left: 5px;
+  padding-left: 8px; /* Increased spacing */
 }
 
 /* Adjust Phone Number Input Group */
@@ -123,62 +151,110 @@
 
 .input-group-text {
   background-color: #e9ecef;
-  border: 1px solid #ccc;
+  border: 1px solid #ced4da; /* Lighter border */
   border-right: none;
   border-radius: 4px 0 0 4px;
-  padding: 0.75rem;
-  font-size: 1rem;
+  padding: 0.5rem 0.75rem; /* Reduced padding */
+  font-size: 0.9rem;
   width: auto;
-  height: calc(3rem + 2px);
+  height: calc(2.25rem + 2px); /* Adjusted height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .input-group > .form-control {
   border-left: none;
   border-radius: 0 4px 4px 0;
-  height: calc(3rem + 2px);
+  height: calc(2.25rem + 2px); /* Adjusted height */
+  font-size: 0.9rem;
 }
+
 
 /* Adjust Email and Phone Number Layout */
 .mb-3:nth-child(3), /* Email Address */
 .row.mb-3:nth-child(4) { /* Phone Number Row */
   display: flex;
   flex-wrap: wrap;
-  margin-bottom: 1rem;
+  margin-bottom: 0.8rem; /* Reduced margin */
 }
 
 .mb-3:nth-child(3) > label,
-.row.mb-3:nth-child(4) > div { /* Target the col-md-4 for Phone */
+.row.mb-3:nth-child(4) > div { /* Target the col-md-6 for Phone */
   flex-basis: 50%;
   max-width: 50%;
-  padding-right: 5px;
+  padding-right: 8px; /* Increased spacing */
 }
 
 .mb-3:nth-child(3) > input,
-.row.mb-3:nth-child(4) > div { /* Target the col-md-4 for Phone */
-  padding-left: 5px;
+.row.mb-3:nth-child(4) > div { /* Target the col-md-6 for Phone */
+  padding-left: 8px; /* Increased spacing */
 }
 
-/* Adjust Old and New Password Layout */
-.mb-3:nth-child(6), /* Old Password */
+/* Password Fields Styling */
+.row.mb-3:nth-child(6), /* Old Password Row */
 .row.mb-3:nth-child(7) { /* New Password Row */
-  display: flex;
-  flex-wrap: wrap;
-  margin-bottom: 1rem;
+  margin-bottom: 0.8rem;
 }
 
-.mb-3:nth-child(6) > label,
-.row.mb-3:nth-child(7) > div { /* Target the col-md-6 for New Password */
-  flex-basis: 50%;
+.row.mb-3:nth-child(6) > div,
+.row.mb-3:nth-child(7) > div {
+  flex: 0 0 50%; /* Each password field takes 50% width */
   max-width: 50%;
-  padding-right: 5px;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 
-.mb-3:nth-child(6) > input,
-.row.mb-3:nth-child(7) > div { /* Target the col-md-6 for New Password */
-  padding-left: 5px;
+.row.mb-3:nth-child(6) > div:first-child,
+.row.mb-3:nth-child(7) > div:first-child {
+  padding-left: 0; /* Remove left padding for the first in the row */
 }
 
-/* Confirm New Password will remain on its own line due to the HTML */
+.row.mb-3:nth-child(6) > div:last-child,
+.row.mb-3:nth-child(7) > div:last-child {
+  padding-right: 0; /* Remove right padding for the last in the row */
+}
+
+.mb-3:nth-child(8) { 
+  margin-bottom: 0.8rem;
+}
+
+.mb-3:nth-child(7) .form-label,
+.mb-3:nth-child(8) .form-label {
+  display: block;
+  width: 100%;
+  margin-bottom: 0.2rem;
+  font-size: 0.9rem;
+  color: #555;
+  font-weight: normal;
+}
+
+.mb-3:nth-child(8) .input-group {
+  display: flex;
+}
+
+.mb-3:nth-child(6) .input-group,
+.row.mb-3:nth-child(7) .input-group,
+.mb-3:nth-child(8) .input-group {
+  width: 100%; /* Ensure full width for input groups */
+}
+
+.mb-3:nth-child(6) .form-control,
+.row.mb-3:nth-child(7) .form-control,
+.mb-3:nth-child(8) .form-control {
+  border-radius: 4px 0 0 4px;
+}
+
+.mb-3:nth-child(6) .input-group-text,
+.row.mb-3:nth-child(7) .input-group-text,
+.mb-3:nth-child(8) .input-group-text {
+  background-color: #e9ecef;
+  border: 1px solid #ced4da;
+  border-left: none;
+  border-radius: 0 4px 4px 0;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.9rem;
+}
 
 /* Save Button Takes Full Width */
 .d-flex.justify-content-end {
@@ -191,9 +267,9 @@
   color: #fff;
   border: none;
   border-radius: 4px;
-  padding: 0.75rem 1.5rem;
+  padding: 0.5rem 1rem; /* Reduced padding */
   cursor: pointer;
-  font-size: 1rem;
+  font-size: 0.9rem;
 }
 
 .btn-primary:hover {

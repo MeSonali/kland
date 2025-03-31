@@ -14,8 +14,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { LayoutComponent } from './user/layout/layout.component';
 import { RouterModule } from '@angular/router';
 import { UserserviceService } from '../app/services/userservice.service';
-import { NavComponent } from './user/nav/nav.component'; // Import NavComponent
-import { FooterComponent } from './user/footer/footer.component'; // Import FooterComponent
+import { NavComponent } from './user/nav/nav.component'; 
+import { FooterComponent } from './user/footer/footer.component'; 
 
 
 @NgModule({
@@ -24,9 +24,8 @@ import { FooterComponent } from './user/footer/footer.component'; // Import Foot
     LoginComponent,
     ProfileComponent,
     LayoutComponent,
-    
-    NavComponent, // Declare NavComponent
-    FooterComponent // Declare FooterComponent
+    NavComponent, 
+    FooterComponent 
   ],
   imports: [
     BrowserModule,

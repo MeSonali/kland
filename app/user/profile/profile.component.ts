@@ -37,4 +37,21 @@ export class ProfileComponent implements OnInit {
     localStorage.clear();
     this.router.navigate(['/login']);
   }
+
+  togglePasswordVisibility(inputId: string) {
+    const input = document.getElementById(inputId) as HTMLInputElement;
+    const icon = document.getElementById(`toggle${inputId.charAt(0).toUpperCase() + inputId.slice(1)}`) as HTMLElement;
+
+    if (input.type === 'password') {
+      input.type = 'text';
+      icon.classList.remove('bi-eye-slash');
+      icon.classList.add('bi-eye'); // Ensure you have bi-eye in Bootstrap Icons
+    } else {
+      input.type = 'password';
+      icon.classList.remove('bi-eye');
+      icon.classList.add('bi-eye-slash');
+    }
+  }
 }
+
+

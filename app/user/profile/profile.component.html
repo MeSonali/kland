@@ -1,20 +1,18 @@
 <div class="container mt-4">
   <div class="row">
     <div class="col-md-3">
-      <div class="card mb-3">
-        <div class="card-body text-center">
-          <div class="rounded-circle bg-secondary text-white d-flex justify-content-center align-items-center mx-auto mb-2" style="width: 80px; height: 80px; font-size: 2rem;">
+      <div class="card mb-3 shadow-sm" style="border: 1px solid #f8f9fa;">
+        <div class="card-body text-center p-3">
+          <div class="rounded-circle bg-light d-flex justify-content-center align-items-center mx-auto mb-2" style="width: 70px; height: 70px; font-size: 2.5rem; color: #555;">
             <i class="bi bi-person-fill"></i>
           </div>
-          <div>
-            <h6 class="mb-1">{{ user.first_name }}</h6>
-            <p class="text-muted mb-0">+{{ user.phone_code }} {{ user.phone_number }}</p>
-            <p class="text-muted mb-0">{{ user.email }}</p>
-          </div>
+          <h6 class="mb-1">{{ user.first_name }}</h6>
+          <p class="text-muted mb-0">+{{ user.phone_code }}</p>
+          <p class="text-muted mb-0">{{ user.email }}</p>
         </div>
       </div>
       <div class="list-group">
-        <a href="#" class="list-group-item list-group-item-action active">
+        <a href="#" class="list-group-item list-group-item-action active" style="background-color: #e9ecef; color: #007bff; border-left: 3px solid #007bff; font-weight: bold;">
           <i class="bi bi-pencil-square me-2"></i> Edit Profile
         </a>
         <a href="#" class="list-group-item list-group-item-action">
@@ -23,10 +21,10 @@
         <a href="#" class="list-group-item list-group-item-action">
           <i class="bi bi-telephone me-2"></i> Contact Us
         </a>
-        <a href="#" class="list-group-item list-group-item-action text-danger">
-          <i class="bi bi-trash me-2"></i> Delete Account
+        <a href="#" class="list-group-item list-group-item-action ">
+          <i class="bi bi-person-x-fill me-2"></i> Delete Account
         </a>
-        <a href="#" class="list-group-item list-group-item-action">
+        <a href="#" class="list-group-item list-group-item-action text-danger">
           <i class="bi bi-box-arrow-left me-2"></i> Logout
         </a>
       </div>
@@ -63,27 +61,53 @@
               <div class="col-md-6">
                 <label for="phone" class="form-label">Phone Number</label>
                 <div class="input-group">
+                  <!-- <select class="form-select" id="phoneCode" [(ngModel)]="user.phone_code" name="phoneCode" style="max-width: 120px;">
+                    <option value="+965" selected>+965</option>
+                    <option value="+1">+1</option>
+                    <option value="+44">+44</option>
+                    <option value="+91">+91</option>
+                    </select> -->
+
                   <span class="input-group-text">+{{ user.phone_code }}</span>
                   <input type="text" class="form-control" id="phone" [(ngModel)]="user.phone" name="phoneNumber">
                 </div>
               </div>
             </div>
+
             <div class="row mb-3">
               <div class="col-md-6">
                 <label for="oldPassword" class="form-label">Old Password</label>
-                <input type="password" class="form-control" id="oldPassword" [(ngModel)]="oldPassword" name="oldPassword" placeholder="Enter your current password">
+                <div class="input-group">
+                  <input type="password" class="form-control" id="oldPassword" [(ngModel)]="oldPassword" name="oldPassword" placeholder="Enter your current password">
+                  <span class="input-group-text" style="cursor: pointer;" (click)="togglePasswordVisibility('oldPassword')">
+                    <i class="bi bi-eye-slash" id="toggleOldPassword"></i>
+                  </span>
+                </div>
               </div>
               <div class="col-md-6">
                 <label for="newPassword" class="form-label">New Password</label>
-                <input type="password" class="form-control" id="newPassword" [(ngModel)]="newPassword" name="newPassword" placeholder="Enter your new password">
+                <div class="input-group">
+                  <input type="password" class="form-control" id="newPassword" [(ngModel)]="newPassword" name="newPassword" placeholder="Enter your new password">
+                  <span class="input-group-text" style="cursor: pointer;" (click)="togglePasswordVisibility('newPassword')">
+                    <i class="bi bi-eye-slash" id="toggleNewPassword"></i>
+                  </span>
+                </div>
               </div>
             </div>
             <div class="row mb-3">
-              <div class="col-md-12">
+              <div class="col-md-6">
                 <label for="confirmPassword" class="form-label">Confirm New Password</label>
-                <input type="password" class="form-control" id="confirmPassword" [(ngModel)]="confirmPassword" name="confirmPassword" placeholder="Confirm your new password">
+                <div class="input-group">
+                  <input type="password" class="form-control" id="confirmPassword" [(ngModel)]="confirmPassword" name="confirmPassword" placeholder="Confirm your new password">
+                  <span class="input-group-text" style="cursor: pointer;" (click)="togglePasswordVisibility('confirmPassword')">
+                    <i class="bi bi-eye-slash" id="toggleConfirmPassword"></i>
+                  </span>
+                </div>
               </div>
+              <div class="col-md-6">
+                </div>
             </div>
+
             <div class="d-flex justify-content-end">
               <button type="submit" class="btn btn-primary w-100">Save</button>
             </div>
