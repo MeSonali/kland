@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent{
   loginForm: FormGroup;
+  passwordVisible: boolean = false;
 
   constructor(
     private fb: FormBuilder,
@@ -56,5 +57,10 @@ export class LoginComponent{
         // }
       );
     }
+  }
+
+  
+  togglePassword() {
+    this.passwordVisible = !this.passwordVisible;
   }
 }

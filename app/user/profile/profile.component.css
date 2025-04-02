@@ -1,29 +1,85 @@
 /* profile.component.css */
 
-.container {
-  margin-top: 20px;
+/* -------------------------------------------------- */
+/* User Info Card (Overlapping Section - Absolute Positioning) */
+/* -------------------------------------------------- */
+.user-info-overlap-container {
+  position: absolute;
+  top: 210px; /* Adjust this value to control the vertical position of the top of the card */
+
+
+  left: 50%;
+  transform: translateX(-50%); /* Center the card horizontally */
+  width: 90%; /* Adjust the width of the container */
+  z-index: 20; /* Ensure it's above the header */
+}
+
+.user-info-card {
+  border: none;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.user-info-card .card-body {
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  text-align: left;
+}
+
+.profile-image-wrapper {
+  width: 80px;
+  height: 80px;
+  font-size: 2.5rem;
+  color: #555;
+  background-color: #f8f9fa;
+  border: 1px solid #ced4da;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 1rem;
+}
+
+.user-info-card h6.mb-1 {
+  margin-bottom: 0.2rem;
+  color: #333;
+  font-size: 1rem;
+}
+
+.user-info-card p.text-muted {
+  color: #6c757d !important;
+  font-size: 0.9rem;
+  margin-bottom: 0.1rem;
+}
+
+.user-info-card p.text-muted.phone-number {
+  margin-bottom: 0.3rem;
+}
+
+/* -------------------------------------------------- */
+/* Main Content Container */
+/* -------------------------------------------------- */
+.profile-main-content{
+  margin-top:80px !important; /* Adjust this to control the space below the overlapped card */
 }
 
 .card {
-  border: 1px solid #f8f9fa; /* Lighter card border */
+  border: 1px solid #f8f9fa;
   border-radius: 8px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
   margin-bottom: 20px;
 }
 
 .card-body {
-  padding: 1rem; /* Reduced padding */
+  padding: 1rem;
 }
 
 .card-title {
-  font-size: 1.3rem; /* Slightly smaller title */
+  font-size: 1.3rem;
   color: #333;
-  margin-bottom: 1.2rem; /* Adjusted margin */
-}
-
-/* User Summary (Left Column) */
-.text-center {
-  text-align: center;
+  margin-bottom: 1.2rem;
 }
 
 .rounded-circle {
@@ -31,31 +87,31 @@
 }
 
 .bg-secondary {
-  background-color: #f8f9fa !important; /* Light background */
-  border: 1px solid #ddd !important; /* Light border */
-  color: #555 !important; /* Darker icon color */
+  background-color: #f8f9fa !important;
+  border: 1px solid #ddd !important;
+  color: #555 !important;
 }
 
 .text-white {
-  color: inherit !important; /* Override text-white */
+  color: inherit !important;
 }
 
 .bi-person-fill {
-  font-size: 2.2rem; /* Larger icon */
+  font-size: 2.2rem;
 }
 
 .mb-1 {
-  margin-bottom: 0.1rem; /* Reduced margin */
+  margin-bottom: 0.1rem;
 }
+
 
 .text-muted {
   color: #6c757d !important;
-  font-size: 0.9rem; /* Slightly smaller text */
+  font-size: 0.9rem;
 }
 
-/* Navigation List */
 .list-group {
-  margin-top: 0; /* Removed top margin */
+  margin-top: 0;
   border: 1px solid #ddd;
   border-radius: 8px;
   overflow: hidden;
@@ -64,7 +120,7 @@
 .list-group-item-action {
   cursor: pointer;
   border: none;
-  padding: 0.6rem 1rem; /* Reduced padding */
+  padding: 0.6rem 1rem;
   color: #495057;
   font-size: 0.95rem;
 }
@@ -74,9 +130,9 @@
 }
 
 .list-group-item-action.active {
-  background-color: #e9ecef; /* Light background for active */
-  color: #009688 !important;
-  border-left: none !important;
+  background-color: #e9ecef;
+  color:#29a195 !important; 
+  border-left:none !important;
   font-weight: bold;
 }
 
@@ -89,7 +145,7 @@
 }
 
 .me-2 {
-  margin-right: 0.4rem; /* Reduced margin */
+  margin-right: 0.4rem;
 }
 
 .text-danger {
@@ -101,7 +157,6 @@
   color: #721c24 !important;
 }
 
-/* Personal Information Form (Right Column) */
 .d-flex.align-items-center.mb-3 {
   margin-bottom: 1rem !important;
 }
@@ -111,18 +166,18 @@
 }
 
 .form-label {
-  font-weight: normal; /* Made font weight normal */
+  font-weight: normal;
   color: #555;
-  margin-bottom: 0.2rem; /* Reduced margin */
+  margin-bottom: 0.2rem;
   display: block;
   font-size: 0.9rem;
 }
 
 .form-control {
-  border: 1px solid #ced4da; /* Lighter border */
+  border: 1px solid #ced4da;
   border-radius: 4px;
-  padding: 0.5rem 0.75rem; /* Reduced padding */
-  margin-bottom: 0.8rem; /* Reduced margin */
+  padding: 0.5rem 0.75rem;
+  margin-bottom: 0.8rem;
   font-size: 0.9rem;
   border-left-width: 1px !important;
   border-left-style: solid !important;
@@ -134,15 +189,14 @@
   box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
 }
 
-.row.mb-3 > div:nth-child(1) { /* For spacing between side-by-side elements */
-  padding-right: 8px; /* Increased spacing */
+.row.mb-3 > div:nth-child(1) {
+  padding-right: 8px;
 }
 
-.row.mb-3 > div:nth-child(2) { /* For spacing between side-by-side elements */
-  padding-left: 8px; /* Increased spacing */
+.row.mb-3 > div:nth-child(2) {
+  padding-left: 8px;
 }
 
-/* Adjust Phone Number Input Group */
 .input-group {
   display: flex;
   align-items: stretch;
@@ -151,13 +205,13 @@
 
 .input-group-text {
   background-color: #e9ecef;
-  border: 1px solid #ced4da; /* Lighter border */
+  border: 1px solid #ced4da;
   border-right: none;
   border-radius: 4px 0 0 4px;
-  padding: 0.5rem 0.75rem; /* Reduced padding */
+  padding: 0.5rem 0.75rem;
   font-size: 0.9rem;
   width: auto;
-  height: calc(2.25rem + 2px); /* Adjusted height */
+  height: calc(2.25rem + 2px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -166,40 +220,37 @@
 .input-group > .form-control {
   border-left: none;
   border-radius: 0 4px 4px 0;
-  height: calc(2.25rem + 2px); /* Adjusted height */
+  height: calc(2.25rem + 2px);
   font-size: 0.9rem;
 }
 
-
-/* Adjust Email and Phone Number Layout */
-.mb-3:nth-child(3), /* Email Address */
-.row.mb-3:nth-child(4) { /* Phone Number Row */
+.mb-3:nth-child(3),
+.row.mb-3:nth-child(4) {
   display: flex;
   flex-wrap: wrap;
-  margin-bottom: 0.8rem; /* Reduced margin */
+  margin-bottom: 0.8rem;
 }
 
 .mb-3:nth-child(3) > label,
-.row.mb-3:nth-child(4) > div { /* Target the col-md-6 for Phone */
+.row.mb-3:nth-child(4) > div {
   flex-basis: 50%;
   max-width: 50%;
-  padding-right: 8px; /* Increased spacing */
+  padding-right: 8px;
 }
 
 .mb-3:nth-child(3) > input,
-.row.mb-3:nth-child(4) > div { /* Target the col-md-6 for Phone */
-  padding-left: 8px; /* Increased spacing */
+.row.mb-3:nth-child(4) > div {
+  padding-left: 8px;
 }
 
-/* Password Fields Styling */
-.row.mb-3:nth-child(6), /* Old Password Row */
-.row.mb-3:nth-child(7) { /* New Password Row */
+.row.mb-3:nth-child(6),
+.row.mb-3:nth-child(7) {
   margin-bottom: 0.8rem;
 }
 
 .row.mb-3:nth-child(6) > div,
 .row.mb-3:nth-child(7) > div {
-  flex: 0 0 50%; /* Each password field takes 50% width */
+  flex: 0 0 50%;
   max-width: 50%;
   padding-left: 8px;
   padding-right: 8px;
@@ -207,15 +258,15 @@
 
 .row.mb-3:nth-child(6) > div:first-child,
 .row.mb-3:nth-child(7) > div:first-child {
-  padding-left: 0; /* Remove left padding for the first in the row */
+  padding-left: 0;
 }
 
 .row.mb-3:nth-child(6) > div:last-child,
 .row.mb-3:nth-child(7) > div:last-child {
-  padding-right: 0; /* Remove right padding for the last in the row */
+  padding-right: 0;
 }
 
-.mb-3:nth-child(8) { 
+.mb-3:nth-child(8) {
   margin-bottom: 0.8rem;
 }
 
@@ -236,7 +287,7 @@
 .mb-3:nth-child(6) .input-group,
 .row.mb-3:nth-child(7) .input-group,
 .mb-3:nth-child(8) .input-group {
-  width: 100%; /* Ensure full width for input groups */
+  width: 100%;
 }
 
 .mb-3:nth-child(6) .form-control,
@@ -256,18 +307,17 @@
   font-size: 0.9rem;
 }
 
-/* Save Button Takes Full Width */
 .d-flex.justify-content-end {
-  justify-content: flex-start !important; /* Align to the start to take full width */
+  justify-content: flex-start !important;
 }
 
 .btn-primary {
-  width: 100%; /* Make the button full width */
+  width: 100%;
   background-color: #007bff;
   color: #fff;
   border: none;
   border-radius: 4px;
-  padding: 0.5rem 1rem; /* Reduced padding */
+  padding: 0.5rem 1rem;
   cursor: pointer;
   font-size: 0.9rem;
 }
