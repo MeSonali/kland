@@ -8,11 +8,11 @@ import { Router } from '@angular/router';
   styleUrls: ['./profile.component.css'],
 })
 export class ProfileComponent implements OnInit {
-  // ✅ Declare all required properties
+ 
   user: any = {};
   oldPassword: string = '';
-  newPassword: string = ''; // <-- Added this property
-  confirmPassword: string = ''; // <-- Added this property
+  newPassword: string = ''; 
+  confirmPassword: string = '';
 
   constructor(
     private userService: UserserviceService,
@@ -45,7 +45,7 @@ export class ProfileComponent implements OnInit {
     if (input.type === 'password') {
       input.type = 'text';
       icon.classList.remove('bi-eye-slash');
-      icon.classList.add('bi-eye'); // Ensure you have bi-eye in Bootstrap Icons
+      icon.classList.add('bi-eye'); 
     } else {
       input.type = 'password';
       icon.classList.remove('bi-eye');

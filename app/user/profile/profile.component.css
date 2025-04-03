@@ -5,13 +5,13 @@
 /* -------------------------------------------------- */
 .user-info-overlap-container {
   position: absolute;
-  top: 210px; /* Adjust this value to control the vertical position of the top of the card */
+  top: 210px; 
 
 
   left: 50%;
-  transform: translateX(-50%); /* Center the card horizontally */
-  width: 90%; /* Adjust the width of the container */
-  z-index: 20; /* Ensure it's above the header */
+  transform: translateX(-50%); 
+  width: 90%; 
+  z-index: 20; 
 }
 
 .user-info-card {
@@ -62,7 +62,7 @@
 /* Main Content Container */
 /* -------------------------------------------------- */
 .profile-main-content{
-  margin-top:80px !important; /* Adjust this to control the space below the overlapped card */
+  margin-top:80px !important; 
 }
 
 .card {
