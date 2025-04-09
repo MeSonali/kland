@@ -1,0 +1,58 @@
+<div class="login-container ">
+  <div class="login-box">
+    <img src="assets/images/kland_logo.png" alt="KLand Logo" class="logo" />
+    <h2>ENTER YOUR EMAIL TO CONTINUE</h2>
+
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email" placeholder="Email" />
+        <mat-error *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched">
+          Valid email is required.
+        </mat-error>
+      </mat-form-field>
+
+      <!-- <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Password</mat-label>
+        <input matInput type="password" formControlName="password" placeholder="Password" />
+        <mat-error *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched">
+          Password is required.
+        </mat-error>
+      </mat-form-field> -->
+      
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Password</mat-label>
+        <input
+          matInput
+          [type]="passwordVisible ? 'text' : 'password'"
+          formControlName="password"
+          placeholder="Password"
+        />
+        <button
+          mat-icon-button
+          matSuffix
+          (click)="togglePassword()"
+          [attr.aria-label]="passwordVisible ? 'Hide password' : 'Show password'"
+          [attr.aria-pressed]="passwordVisible"
+          type="button" >
+          <i class="bi" [ngClass]="{'bi-eye': passwordVisible, 'bi-eye-slash': !passwordVisible}"></i>
+        </button>
+        <mat-error *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched">
+          Password is required.
+        </mat-error>
+      </mat-form-field>
+
+
+
+      <div class="actions">
+        <a href="/forgot-password" class="forgot-password">Forgot password?</a>
+      </div>
+
+      <button mat-raised-button color="primary" class="full-width" type="submit" [disabled]="loginForm.invalid">
+        Login
+      </button>
+    </form>
+
+    <p>Don't have an account? <a routerLink="/register">Create Account</a></p>
+  </div>
+</div>
